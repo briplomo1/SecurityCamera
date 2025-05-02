@@ -1,0 +1,3 @@
+C:/Users/bripl/CLionProjects/SecurityCamera/cmake-build-debug/CMakeFiles/SecurityCamera.dir
+C:/Users/bripl/CLionProjects/SecurityCamera/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/bripl/CLionProjects/SecurityCamera/cmake-build-debug/CMakeFiles/rebuild_cache.dir
