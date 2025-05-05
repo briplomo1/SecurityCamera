@@ -1,2 +1,4 @@
 .idea
+.qodo
+build
 cmake-build-debug
