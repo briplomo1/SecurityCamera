@@ -17,17 +17,16 @@ target_compile_options(${EXECUTABLE} PRIVATE
         -Wall
 )
 
-set(PYTHON_CMD "python")
-set(DEPLOY_SCRIPT "deploy.py")
-# Install python dependencies
-execute_process(COMMAND python -m venv ${CMAKE_CURRENT_SOURCE_DIR}/.venv)
 
-execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/.venv/Scripts/pip install -r ${CMAKE_CURRENT_SOURCE_DIR}/requirements.txt)
-## Run python script
-execute_process(COMMAND python
-        #Python script path
-        ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${DEPLOY_SCRIPT}
-        #Compiled binary path arg
-        ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${CMAKE_PROJECT_NAME}
+add_custom_command(TARGET ${CMAKE_PROJECT_NAME}
+        # Execute commands after binary is built
+        POST_BUILD
+        # Create python virtual environment
+        COMMAND python -m venv ${CMAKE_CURRENT_SOURCE_DIR}/.venv
+        # Install python deps in virtual environment
+        COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/.venv/Scripts/pip install -r ${CMAKE_CURRENT_SOURCE_DIR}/requirements.txt
+        # Push code to device - MUST HAVE PASSWORDLESS SSH ENABLED
+        COMMAND python ${CMAKE_SOURCE_DIR}/deploy.py ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${CMAKE_PROJECT_NAME}
 )
+
 
