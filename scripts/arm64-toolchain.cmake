@@ -1,14 +1,10 @@
+# Set compilers and toolchain
+
 set(CMAKE_SYSTEM Generic)
 set(CMAKE_SYSTEM_NAME Linux)
-set(CMAKE_SYSTEM_PROCESSOR aarch64)
-set(CMAKE_CROSSCOMPILING 1)
-
-# Reset generator. Wehn MSVC is detected it overrides the generator and prevents
-# use of the arm64 toolchain
-
+set(CMAKE_SYSTEM_PROCESSOR ARM64)
 
 set(TOOLCHAIN_DIR ${CMAKE_BINARY_DIR}/external/aarch64-linux/toolchain)
-
 set(BINUTILS_PATH ${TOOLCHAIN_DIR}/bin)
 
 SET(CMAKE_C_COMPILER ${BINUTILS_PATH}/aarch64-none-linux-gnu-gcc.exe)
@@ -27,5 +23,6 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM  NEVER)
 SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY  ONLY)
 SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE  ONLY)
 
+# Set system root aka where to find libs
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --sysroot=${CMAKE_SYSROOT}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --sysroot=${CMAKE_SYSROOT}")

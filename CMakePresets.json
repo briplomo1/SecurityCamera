@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "MINGW",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/build"
+    },
+    {
+      "name": "MAKEFILES",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build"
+    },
+    {
+      "name": "NINJA",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build"
+    }
+  ]
+}
