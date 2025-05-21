@@ -6,3 +6,4 @@ build
 cmake-build-debug
 SecurityCamera
 .venv
+external/*

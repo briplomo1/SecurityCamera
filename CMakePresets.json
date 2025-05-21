@@ -1,20 +1,28 @@
 {
   "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 3,
+    "patch": 0
+  },
   "configurePresets": [
     {
-      "name": "MINGW",
+      "name": "mingw",
       "generator": "MinGW Makefiles",
-      "binaryDir": "${sourceDir}/build"
+      "binaryDir": "${sourceDir}/build",
+      "toolchainFile": "${sourceDir}/scripts/arm64-toolchain.cmake"
     },
     {
-      "name": "MAKEFILES",
+      "name": "make",
       "generator": "Unix Makefiles",
-      "binaryDir": "${sourceDir}/build"
+      "binaryDir": "${sourceDir}/build",
+      "toolchainFile": "${sourceDir}/scripts/arm64-toolchain.cmake"
     },
     {
-      "name": "NINJA",
+      "name": "ninja",
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build"
+      "binaryDir": "${sourceDir}/build",
+      "toolchainFile": "${sourceDir}/scripts/arm64-toolchain.cmake"
     }
   ]
 }

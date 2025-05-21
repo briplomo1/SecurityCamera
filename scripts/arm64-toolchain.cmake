@@ -4,7 +4,7 @@ set(CMAKE_SYSTEM Generic)
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR ARM64)
 
-set(TOOLCHAIN_DIR ${CMAKE_BINARY_DIR}/external/aarch64-linux/toolchain)
+set(TOOLCHAIN_DIR ${CMAKE_SOURCE_DIR}/external/aarch64-linux/toolchain)
 set(BINUTILS_PATH ${TOOLCHAIN_DIR}/bin)
 
 SET(CMAKE_C_COMPILER ${BINUTILS_PATH}/aarch64-none-linux-gnu-gcc.exe)

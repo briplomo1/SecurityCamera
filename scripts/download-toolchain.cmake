@@ -1,4 +1,4 @@
-set(ARM_TOOLCHAIN_DIR ${CMAKE_BINARY_DIR}/external/aarch64-linux/toolchain)
+set(ARM_TOOLCHAIN_DIR ${CMAKE_SOURCE_DIR}/external/aarch64-linux/toolchain)
 
 
 # Install gnu toolchain for arm64 to crosscompile for device if not installed already
