@@ -13,7 +13,9 @@ if(NOT EXISTS ${ARM_TOOLCHAIN_DIR})
 #        else ()
 #            message(STATUS Downloading arm64 GNU toolchain for AMD64 Apple host environment)
 
-        endif ()
+
+#        endif ()
+
     elseif(UNIX AND (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "x86_64"))
         message(STATUS Downloading arm64 GNU toolchain for AMD64 Windows host environment)
         file(DOWNLOAD https://developer.arm.com/-/media/Files/downloads/gnu/12.2.rel1/binrel/arm-gnu-toolchain-12.2.rel1-x86_64-aarch64-none-linux-gnu.tar.xz ${ARM_TOOLCHAIN_DIR}/toolchain.tar.xz)
