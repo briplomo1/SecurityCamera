@@ -97,7 +97,7 @@ def deploy_binary(local_bin, local_tests, remote_bin, remote_tests):
 
 def perform_tests(device, tests, results):
     print(f"\033[35m-- Running unit tests on remote device: {device}\033[0m")
-    # Run tests command and dont close ssh connection on test fail
+    # Run tests command and don't close ssh connection on test fail
     test_cmd = ["ssh", "-t", device, f"chmod +x {tests} && {tests} --gtest_output=xml:{results} || true"]
     print(f"Running: {test_cmd}")
     # Run build command on remote device
@@ -121,7 +121,7 @@ def get_tests_report(remote_file, local_file):
 
 if __name__ == "__main__":
 
-    # Define cmd line args #
+    # Define cmd line args #######################
 
     # Flags
     parser = argparse.ArgumentParser(description="Build and/or deploy binary executable from dev environment to device")
